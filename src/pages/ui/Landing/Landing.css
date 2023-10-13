@@ -1,0 +1,12 @@
+.landing {
+  width: 100vw;
+  height: 100vh;
+  background-color: #4271e1;
+}
+
+.landing__main {
+  margin-top: 45.09vh;
+  margin-left: 5.21vh;
+  height: 14.64vw;
+  display: flex;
+}

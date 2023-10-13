@@ -1,0 +1,18 @@
+.to-search-branch-button {
+  background-color: white;
+  height: inherit;
+  width: 44.69vw;
+  border-radius: 12px;
+}
+
+.to-search-branch-button__text {
+  color: #0a2896;
+  font-size: 1.86vw;
+}
+
+.to-search-branch-button__text_bold {
+  color: #0559ff;
+}
+
+.to-search-branch-button__button {
+}

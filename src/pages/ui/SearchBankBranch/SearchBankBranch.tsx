@@ -1,3 +1,5 @@
+import "./SearchBankBranch.css";
+
 const SearchBankBranch = () => {
   return <>SearchBankBranch</>;
 };
