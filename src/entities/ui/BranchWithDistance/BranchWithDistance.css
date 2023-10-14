@@ -4,6 +4,10 @@
   align-items: center;
 }
 
+.branch-with-distance_clickable {
+  cursor: pointer;
+}
+
 .branch-with-distance__logo {
   width: 2.39vw;
   height: 2.39vw;

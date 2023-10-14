@@ -1,19 +1,29 @@
 import { create } from "zustand";
 
 type BankBranchStore = {
+  atms: Array<Atm>;
   branches: Array<BankBranch>;
-  isLoading: Boolean;
   clickedBranch: CompleteBankBranch | null;
   setBranches: (branches: BankBranch[]) => void;
-  setCompleteBranch: (branch: CompleteBankBranch) => void;
+  setCompleteBranch: (branch: CompleteBankBranch | null) => void;
 };
 
 type BankBranch = {
   id: number;
-  lat: number;
-  lng: number;
+  latitude: string;
+  longitude: string;
   address: string;
-  name: string;
+  sale_point_name: string;
+  office_type: string;
+  status: string;
+};
+
+type Atm = {
+  id: number;
+  latitude: string;
+  longitude: string;
+  all_day: boolean;
+  address: string;
 };
 
 export type CompleteBankBranch = {
@@ -25,22 +35,13 @@ export type CompleteBankBranch = {
 };
 
 const useBankBranchesStore = create<BankBranchStore>((set) => ({
-  branches: [
-    {
-      id: 1,
-      lat: 60,
-      lng: 30.3,
-      address: "",
-      name: "",
-    },
-  ],
+  branches: [],
   clickedBranch: null,
-  isLoading: false,
+  atms: [],
   setBranches: (branches) =>
     set((state) => ({
       ...state,
       branches,
-      isLoading: false,
     })),
   setCompleteBranch: (branch) => {
     set((state) => ({

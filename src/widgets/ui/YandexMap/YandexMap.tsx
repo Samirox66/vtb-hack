@@ -3,6 +3,7 @@ import {
   Map,
   Placemark,
   GeolocationControl,
+  RoutePanel,
 } from "@pbe/react-yandex-maps";
 import { getBranchRequest, useBankBranchesStore } from "../..";
 import { useEffect, useState } from "react";
@@ -19,7 +20,7 @@ const YandexMap = () => {
   const center = userPosition ? userPosition : [56, 56];
   return (
     <YMaps
-      query={{ lang: "en_RU", apikey: import.meta.env.VITE_YANDEX_API_KEY }}
+      query={{ lang: "ru_RU", apikey: import.meta.env.VITE_YANDEX_API_KEY }}
     >
       <Map
         width={"100vw"}
@@ -29,21 +30,21 @@ const YandexMap = () => {
           zoom: 15,
         }}
       >
+        <RoutePanel options={{ float: "right" }} />
         <GeolocationControl />
         {bankBranchesStore.branches.map((branch, index) => (
           <Placemark
-            key={`${branch.name}${index}`}
-            geometry={[branch.lat, branch.lng]}
+            key={`${branch.sale_point_name}${index}`}
+            geometry={[branch.latitude, branch.longitude]}
             properties={{
               hintContent: "Click me",
-              balloonContent: "this is label",
             }}
             instanceRef={(inst) =>
               inst?.events.add("click", async () => {
                 const data = await getBranchRequest(branch.id);
-                if (data == null) {
-                  return;
-                }
+                // if (data == null) {
+                //   return;
+                // }
 
                 bankBranchesStore.setCompleteBranch({
                   id: 1,
