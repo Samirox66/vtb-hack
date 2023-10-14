@@ -9,9 +9,13 @@ export interface NavLinkProps {
 
 const NavLink: FC<NavLinkProps> = ({ label, to }) => {
   const { pathname } = useLocation();
-  console.log(pathname);
+  let className = `nav-link`;
+  if (pathname == to) {
+    className += " nav-link__active";
+  }
+
   return (
-    <Link className="nav-link" to={to}>
+    <Link className={className} to={to}>
       {label}
     </Link>
   );

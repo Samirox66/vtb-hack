@@ -2,35 +2,37 @@ import { NavLink, NavLinkProps } from "../../../shared";
 import "./NavBar.css";
 
 const NavBar = () => {
-  const rootClassName = "external-nav-bar";
+  const rootClassName = "nav-bar";
   const navBarMeta: Array<NavLinkProps> = [
     {
-      to: "",
+      to: "/",
       label: "Частным лицам",
     },
     {
-      to: "",
+      to: "/self-employed",
       label: "Самозанятым",
     },
     {
-      to: "",
+      to: "/business",
       label: "Малый и средний бизнес",
     },
     {
-      to: "",
+      to: "/big-business",
       label: "Крупный бизнес",
     },
   ];
 
   return (
     <section className={rootClassName}>
-      {navBarMeta.map((linkMeta, index) => (
-        <NavLink
-          key={`${linkMeta}${index}`}
-          label={linkMeta.label}
-          to={linkMeta.to}
-        />
-      ))}
+      <section className={`${rootClassName}__links`}>
+        {navBarMeta.map((linkMeta, index) => (
+          <NavLink
+            key={`${linkMeta}${index}`}
+            label={linkMeta.label}
+            to={linkMeta.to}
+          />
+        ))}
+      </section>
     </section>
   );
 };

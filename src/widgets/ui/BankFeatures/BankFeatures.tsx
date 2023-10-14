@@ -1,5 +1,5 @@
 import { BankFeature } from "../../../entities";
-import "./BankFeature.css";
+import "./BankFeatures.css";
 
 const BankFeatures = () => {
   const rootClassName = "bank-features";
@@ -7,8 +7,6 @@ const BankFeatures = () => {
     "30+ сервисов для развития бизнеса-бесплатно или со скидкой",
     "До 14% годовых по вкладу при переводе пенсии на карту ВТБ",
     "Откройте суперспособность покупать все и сразу",
-    "Хороший прогноз на осень",
-    "Совершайте переводы и платежи через Банк",
   ];
 
   return (

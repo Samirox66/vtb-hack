@@ -5,7 +5,8 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route element={<Landing />} path="" />
+        <Route element={<Landing />} path="/" />
+        <Route element={<Landing />} path="/:people" />
         <Route element={<SearchBankBranch />} path="/search-bank-branch" />
       </Routes>
     </BrowserRouter>

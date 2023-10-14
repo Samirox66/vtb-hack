@@ -7,10 +7,12 @@ const Landing = () => {
   return (
     <div className={rootClassName}>
       <Header />
-      <section className={`${rootClassName}__main`}>
-        <ToSearchBranchButton />
-        <BankFeatures />
-      </section>
+      <main className={`${rootClassName}__main`}>
+        <section className={`${rootClassName}__container`}>
+          <ToSearchBranchButton />
+          <BankFeatures />
+        </section>
+      </main>
     </div>
   );
 };
